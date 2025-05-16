@@ -1,0 +1,75 @@
+:root
+  --viewport-phone: #{get-width('phone')}
+  --viewport-phablet: #{get-width('phablet')}
+  --viewport-tablet: #{get-width('tablet')}
+  --viewport-desktop: #{get-width('desktop')}
+  --viewport-desktop-wide: #{get-width('desktop-wide')}
+
+  --space-xs: clamp(0.625rem, 0.5938rem + 0.1563vw, 0.75rem)
+  --space-s: clamp(0.9375rem, 0.8906rem + 0.2344vw, 1.125rem)
+  --space-m: clamp(1.25rem, 1.1875rem + 0.3125vw, 1.5rem)
+  --space-l: clamp(1.625rem, 1.5313rem + 0.4688vw, 2rem)
+  --space-xl: clamp(2rem, 1.9063rem + 0.4688vw, 2.375rem)
+
+  /* One-up pairs */
+  --space-xs-s: clamp(0.625rem, 0.5rem + 0.625vw, 1.125rem)
+  --space-s-m: clamp(0.9375rem, 0.7969rem + 0.7031vw, 1.5rem)
+  --space-m-l: clamp(1.25rem, 1.0625rem + 0.9375vw, 2rem)
+  --space-l-xl: clamp(1.625rem, 1.4375rem + 0.9375vw, 2.375rem)
+
+  /* Custom pairs */
+  --space-m-xl: clamp(1.25rem, 0.9688rem + 1.4063vw, 2.375rem)
+  --space-l-xl: clamp(1.625rem, 1.4375rem + 0.9375vw, 2.375rem)
+
+  --gap: clamp(1rem, 6vw, 3rem)
+  --gap-half: calc(var(--gap) / 2)
+  --global-radius: .375rem
+  --global-radius-max: 1rem
+
+  --mobile-breakpoint: #{$mobile-breakpoint}
+
+  --content-max-width: var(--viewport-tablet)
+  --wide-max-width: var(--viewport-desktop)
+
+  --wide-width-size: calc((var(--wide-max-width) - var(--content-max-width)) / 2)
+
+  --column-min: 24ch
+
+  --gallery-item-min: clamp(22ch, 28vw, 28.75ch)
+  --gallery-item-aspect-ratio: 4/3
+
+  /* --base-font: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif */
+  --base-font: lato,sans-serif
+
+  --fs-200: clamp(0.8331rem, 0.8164rem + 0.0836vw, 0.9rem)
+  --fs-300: clamp(0.9375rem, 0.8906rem + 0.2344vw, 1.125rem)
+  --fs-400: clamp(1.055rem, 0.9672rem + 0.4391vw, 1.4063rem)
+  --fs-500: clamp(1.1863rem, 1.0433rem + 0.7148vw, 1.7581rem)
+  --fs-600: clamp(1.335rem, 1.1194rem + 1.0781vw, 2.1975rem)
+  --fs-700: clamp(1.5019rem, 1.1906rem + 1.5563vw, 2.7469rem)
+  --fs-800: clamp(1.6894rem, 1.2534rem + 2.1797vw, 3.4331rem)
+  --fs-900: clamp(1.9006rem, 1.303rem + 2.9883vw, 4.2913rem)
+
+  --clr-white: #fff
+  --clr-black: #000
+
+  // define-CSS-color-variable: creates two css-variables for the hex and rgb value (e.g. --clr-NAME-rgb: 0, 0, 0)
+  +define-CSS-color-variable('foreground', #1e2332)
+  +define-CSS-color-variable('background', #fcfcf7)
+  +define-CSS-color-variable('border', #858887)
+  +define-CSS-color-variable('primary', #008396)
+  +define-CSS-color-variable('accent', #f7ad79)
+  +define-CSS-color-variable('lightblue', #c5dfee)
+  +define-CSS-color-variable('marine', #00385c)
+  //+define-CSS-color-variable('lightgrey', #f5f7f4)
+
+   // define-CSS-color-variable: creates two css-variables for the hex and rgb value (e.g. --clr-NAME-rgb: 0, 0, 0)
+
+  +define-CSS-color-variable('sand', #dfe3e4)
+  +define-CSS-color-variable('other', #352737)
+
+  // --clr-background: var(--clr-lightgrey)
+
+  --clr-error: #fc5c65
+  --clr-warning: #fcbf49
+  --clr-success: #5D9C59

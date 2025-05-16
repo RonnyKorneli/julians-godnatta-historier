@@ -1,0 +1,44 @@
+$breakpoints: ('phone': 375px, 'phone-wide': 480px, 'phablet': 560px, 'tablet': 768px, 'tablet-wide': 1000px, 'desktop': 1200px, 'desktop-wide': 1560px)
+
+
+// breakpoint as width
+@function get-width($key: 'desktop')
+  @return map-get($breakpoints, $key)
+
+
+// define breakpoint for mobile devices
+$mobile-breakpoint: get-width('tablet-wide')
+
+
+// media breakpoint mixin
+=mq($width, $option:0)
+  @if map_has_key($breakpoints, $width)
+    $width: map_get($breakpoints, $width)
+
+    @if map_has_key($breakpoints, $option)
+      $maxwidth: map_get($breakpoints, $option)
+      @media only screen and (#{$width} <= width < #{$maxwidth})
+        @content
+
+    @else
+      @if $option == max
+        @media only screen and (width < #{$width})
+          @content
+
+      @else
+        @media only screen and (width >= #{$width})
+          @content
+
+  @else
+    @if $option != 0
+      @if $option == max
+        @media only screen and (width < #{$width})
+          @content
+
+      @else
+        @media only screen and (#{$width} <= width < #{$option})
+          @content
+
+    @else
+      @media only screen and (width >= #{$width})
+        @content

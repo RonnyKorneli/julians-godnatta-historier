@@ -1,0 +1,63 @@
+*
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+  -webkit-overflow-scrolling: touch
+  touch-action: manipulation
+
+html
+  scroll-behavior: smooth
+
+body
+  background-color: var(--clr-background)
+  display: block
+  // min-height: 100vh
+  min-width: 320px
+
+img
+  display: block
+  height: auto
+  margin-bottom: var(--global-gap)
+  max-width: 100%
+
+a
+  color: var(--clr-primary)
+
+.no-margin
+  margin: unset
+
+.is-centered
+  text-align: center
+
+figure
+  margin: 0 auto var(--global-gap)
+
+figcaption
+  color: var(--clr-foreground)
+  display: block
+  font-size: var(--fs-300)
+  justify-content: center
+  margin-top: calc(var(--global-gap) / 2)
+  width: 100%
+
+hr
+  background-color: rgba(var(--clr-foreground-rgb), .25)
+  border: 0
+  display: block
+  height: 1px
+  margin: var(--global-gap) auto
+
+  +mq('tablet')
+    margin: calc(#{var(--global-gap)} * 2) auto
+
+ul
+  list-style: none
+  margin: 0 0 var(--global-gap)
+  padding: 0
+
+.has-background
+  padding-top: var(--global-gap)
+  padding-bottom: var(--global-gap)
+
+footer
+  padding-top: var(--global-gap)
+  padding-bottom: var(--global-gap)

@@ -1,0 +1,105 @@
+@import "../setup/_viewport-mq"
+
+.card-container
+  padding-top: var(--gap)
+
+  .header-title
+    width: 100%
+    margin-bottom: var(--gap)
+    font-size: var(--fs-900)
+    color: var(--clr-marine)
+
+    h1
+      font-weight: 100
+
+    span
+      font-weight: 900
+      color: var(--clr-primary)
+
+  .image-container
+    position: relative
+    width: 100%
+    height: 100%
+    aspect-ratio: 16/9
+    overflow: hidden
+
+  figure
+    margin: 0
+
+    .main-image
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+
+  .main-container
+    width: 100%
+
+    .meta-info-stories
+      display: flex
+      align-items: center
+      margin-top: var(--space-s)
+
+      .profile-image-container
+        position: relative
+        width: 50px
+        height: 50px
+        aspect-ratio: 1/1
+        overflow: hidden
+        border-radius: 100%
+        margin-right: var(--space-xs)
+
+      .profile-image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+
+    .link-author
+      a
+        color: var(--clr-error)
+        text-decoration: none
+  .summary-container
+    background: var(--clr-sand)
+    padding: var(--space-s)
+    border-radius: 20px
+    margin-top: var(--space-s)
+    margin-bottom: var(--space-s)
+    border-left: 4px solid var(--clr-accent)
+    .summary-title
+      background: var(--clr-accent)
+      display: inline-block
+      width: auto
+      padding: calc(var(--space-xs) * 0.3)
+      color: var(--clr-background)
+      border-radius: 6px
+    .read-time-container
+      display: flex
+      margin-top: var(--space-xs)
+      font-style: italic
+
+    .summary-text
+      margin-top: var(--space-s)
+      font-weight: 100
+      color: var(--clr-foreground)
+
+  .story-container
+    color: var(--clr-foreground)
+
++mq('tablet')
+  .card-container
+    padding: var(--gap)
+
+  .background-image
+    border-radius: 35px
+
+  .image-container
+    border-radius: 20px

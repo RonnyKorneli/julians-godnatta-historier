@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "name": "god-natta-historier",
+  "version": "0.1.0",
+  "description": "project starter kit for developing an astro based website",
+  "repository": "https://db@git.zweibrand.de/bm-projects/zweibrand-astro-starter.git",
+  "author": "David Block <block@studio-zweibrand.de>",
+  "license": "GPLv3",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "stage": "astro build --mode stage",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.1.4"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "autoprefixer": "^10.4.16",
+    "sass": "^1.69.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mkcert": "^1.17.5"
+  },
+  "browserslist": [
+    "> 4%",
+    "last 10 versions",
+    "not ie <= 11"
+  ]
+}

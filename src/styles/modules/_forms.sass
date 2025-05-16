@@ -1,0 +1,92 @@
+form
+  margin: 0
+  padding: 0
+
+  fieldset
+    background-color: transparent
+    border: 0
+    margin: 0 0 var(--global-gap)
+    max-width: 100%
+    padding: 0
+    width: 100%
+
+    &:last-child
+      margin-bottom: 0
+
+    legend
+      margin-left: -.5em
+      padding-left: .5em
+      padding-right: .5em
+
+    .is-flex
+      margin-bottom: .25em
+
+label,
+.label-text
+  align-items: center
+  cursor: pointer
+  display: block
+  font-size: var(--fs-200)
+  line-height: 1.2
+  margin: 0 0 calc(var(--global-gap) / 6)
+  padding: 0
+  width: 100%
+
+  > i
+    font-weight: normal
+    font-style: normal
+
+.label-text
+  margin-bottom: calc(var(--global-gap) / 4)
+
+
+// forms
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+input[type='range'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='color'],
+textarea
+  appearance: none
+  background: transparent
+  border: 1px solid var(--clr-border)
+  border-radius: var(--global-radius)
+  box-shadow: 0
+  color: var(--clr-foreground)
+  margin: 0 0 calc(var(--global-gap) / 4)
+  outline: 0
+  padding: .5em .875em
+  transition: border,box-shadow .2s ease-in
+  width: 100%
+
+  &:hover
+    border-color: var(--clr-primary)
+
+  &:focus
+    border-color: var(--clr-primary)
+    box-shadow: 0 0 0 3px rgba(var(--clr-primary-rgb), .125)
+    color: var(--color-foreground)
+
+select
+  border: 1px solid var(--color-border)
+
+textarea
+  resize: vertical
+  width: 100%
+
+input[type="checkbox"],
+input[type="radio"]
+  display: inline-block
+  margin: 0 1em 0 0
+  width: auto

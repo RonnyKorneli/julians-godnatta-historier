@@ -1,0 +1,27 @@
+---
+import "../styles/sections/_navbar.sass";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<nav class="content-grid">
+  <div class="nav-container wide-width">
+    <div class="navbar-left">
+      <ol>
+        <li>{t("nav.pageName")}</li>
+      </ol>
+    </div>
+    <div class="navbar-right">
+      <ol class="navbar-right-container">
+        <li>
+          <a href="/no/tradisjonelle-eventyr/">{t("nav.traditionalStories")}</a>
+        </li>
+        <li>{t("nav.whoIsJulian")}</li>
+        <li>{t("nav.blog")}</li>
+        <li><button>{t("nav.button")}</button></li>
+      </ol>
+    </div>
+  </div>
+</nav>

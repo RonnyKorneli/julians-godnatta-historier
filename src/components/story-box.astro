@@ -1,0 +1,20 @@
+---
+import "../styles/components/story-box.sass";
+interface Props {
+  title: string;
+  imageUrl: string;
+  index: number;
+}
+
+const { imageUrl, title } = Astro.props as Props;
+const newImageUrl = `../src/assets/images/${imageUrl}`;
+---
+
+<div class="story-card-container">
+  <div
+    class="story-card-backround-image"
+    style=`background-image: url(${newImageUrl})`
+  >
+  </div>
+  <h2 class="card-title" set:html={title} />
+</div>

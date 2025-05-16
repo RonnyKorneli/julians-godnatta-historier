@@ -1,0 +1,17 @@
+---
+import { languages } from "../i18n/ui";
+import "../styles/components/language-picker.sass";
+import Norway from "../assets/icons/norway-icon.svg";
+
+const norway = Norway.src;
+---
+
+<ul class="language-container">
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li class="language-item">
+        <a href={`/${lang}/`}>{label}</a>
+      </li>
+    ))
+  }
+</ul>

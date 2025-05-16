@@ -1,0 +1,62 @@
+[
+  {
+    "id":1,
+    "title": "DET MAGISKE TELESKOPET",
+    "titlePartOne": "",
+    "titlePartTwo": "DEN FREKKE SKJÆRA  ",
+    "titlePartThree": "",
+    "imagePath": "chess-play.png",
+    "readTime": "",
+    "author":"Nils",
+    "introduction": "",
+    "storyPartOne": "/src/content/stories/the-little-youtuber/little-youtuber-part-one.md"
+},
+{
+  "id":2,
+  "title": "Test 1",
+  "titlePartOne": "",
+  "titlePartTwo": "",
+  "titlePartThree": "",
+  "imagePath": "bear-and-mouse-talking.png",
+  "readTime": "",
+  "author":"Nils",
+  "introduction": "",
+  "storyPartOne": "/src/content/stories/the-little-youtuber/little-youtuber-part-two.md",
+  "storyPartTwo": "Part two",
+  "storyPartThree": "Part three",
+  "urlPathYoutube": "",
+  "tag":"detective-story"
+},
+{
+  "id":3,
+  "title": "Test 1",
+  "titlePartOne": "",
+  "titlePartTwo": "",
+  "titlePartThree": "",
+  "imagePath": "justin-lim-tloFnD-7EpI-unsplash.jpg",
+  "readTime": "",
+  "author":"Nils",
+  "introduction": "intro",
+  "storyPartOne": "hello",
+  "storyPartTwo": "Part two",
+  "storyPartThree": "/src/content/stories/the-little-youtuber/little-youtuber-part-three.md",
+  "urlPathYoutube": "",
+  "tag":"detective-story"
+},
+{
+  "id":4,
+  "title": "Test 1",
+  "titlePartOne": "",
+  "titlePartTwo": "",
+  "titlePartThree": "",
+  "imagePath": "bear-and-mouse-talking.png",
+  "readTime": "",
+  "author":"Nils",
+  "introduction": "",
+  "storyPartOne": "hello",
+  "storyPartTwo": "Part two",
+  "storyPartThree": "Part three",
+  "urlPathYoutube": "",
+  "tag":"detective-story"
+}
+]

@@ -1,0 +1,36 @@
+---
+import MainLayout from "../../layout/base-layout.astro";
+import { getCollection } from "astro:content";
+import StoryBox from "../../components/story-box.astro";
+import IntroTraditionalStories from "../../components/introTraditionalStories.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
+
+const traditionalStoriesCollection = await getCollection("traditionalStories");
+const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
+
+console.log(traditionalStoriesCollection, "TRADstories");
+---
+
+<MainLayout>
+  <main class="content-grid">
+    <IntroTraditionalStories />
+    <div>
+      {
+        traditionalStoriesCollection.map((item: any, index: number) => {
+          const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
+          const slugPath = `/no/eventyr/${cleanSlug}/`;
+
+          return (
+            <a class="item" href="">
+              <StoryBox
+                title={item.data.title || "Default Title"}
+                imageUrl={item.data.mainImage || "default-image-path.png"}
+                index={index}
+              />
+            </a>
+          );
+        })
+      }
+    </div>
+  </main>
+</MainLayout>

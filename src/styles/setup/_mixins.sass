@@ -1,0 +1,68 @@
+// Clearfix
+=clearfix
+  content: ''
+  display: table
+  table-layout: fixed
+
+// Clear after (not all clearfix need this also)
+=clearfix-after
+  clear: both
+
+// set ratio for element
+=responsive-ratio($x, $y, $pseudo: false)
+  $padding: unquote($y / $x * 100 + '%')
+
+  @if $pseudo
+    &:before
+      +pseudo($pos: relative)
+
+      width: 100%
+      padding-top: $padding
+  @else
+    padding-top: $padding
+
+
+// center element
+=push-auto
+  display: grid
+  place-content: center
+
+/*
+ * @font-face mixin
+ * @include fontface('family', 'assets/fonts/', 'myfontname');
+ */
+
+=fontface($font-family, $font-url, $font-name, $weight: normal)
+  @font-face
+    font-display: swap
+    font-family: $font-family
+    font-style: normal
+    font-weight: $weight
+    src: url($font-url + '/' + $font-name + '.woff2') format('woff2')
+    // src: url($font-url + '/' + $font-name + '.woff2') format('woff2'), url($font-url + '/' + $font-name + '.woff') format('woff')
+
+
+// transition
+=transition($element, $duration: .125s, $delay: 0s, $easing: ease-in)
+  $list: null
+
+  @each $prop in $element
+    $list: append($list, $prop, comma)
+
+  transition: $list $duration $delay $easing
+
+
+=position($position, $box-edge-values)
+  // $box-edge-values: _unpack-shorthand($box-edge-values)
+  $offsets: (top: nth($box-edge-values, 1), right: nth($box-edge-values, 2), bottom: nth($box-edge-values, 3), left: nth($box-edge-values, 4))
+
+  position: $position
+
+  @each $offset, $value in $offsets
+    @if _is-length($value)
+      #{$offset}: $value
+
+
+=define-CSS-color-variable($name, $hex)
+  --clr-#{$name}: #{$hex}
+  --clr-#{$name}-rgb: #{red($hex)}, #{green($hex)}, #{blue($hex)}

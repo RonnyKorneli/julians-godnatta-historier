@@ -1,0 +1,30 @@
+---
+import "../styles/style.sass";
+import "../styles/layout/base-layout.sass";
+import { getLangFromUrl } from "../i18n/utils";
+import MainHead from "../components/main-head.astro";
+
+const {
+  title = "God Natta historier",
+  description = "Page Description",
+  isLight = false
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+console.log(lang, "this is lang inside main layout");
+---
+
+<!doctype html>
+<html lang={lang}>
+  <MainHead {title} {description} />
+
+  <body class:list={[{ "is-light": isLight }]}>
+    <div class="page">
+      <main class="main-content">
+        <slot>Content goes here</slot>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style lang="sass"></style>

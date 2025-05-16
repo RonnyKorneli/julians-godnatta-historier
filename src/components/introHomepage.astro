@@ -1,0 +1,17 @@
+---
+import "../styles/components/introHomepage.sass";
+import HappyBird from "../assets/images/happyBirdy.png";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="intro-container">
+  <img class="bird-image" src={HappyBird.src} alt="pink bird" />
+  <div class="headline-box">
+    <p class="sub-title">{t("home.subTitle")}</p>
+    <h1>{t("home.title")} 🌸</h1>
+    <button class="call-for-action">{t("home.callToActionButton")}</button>
+  </div>
+</section>

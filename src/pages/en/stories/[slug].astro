@@ -1,0 +1,74 @@
+---
+import "../../../styles/pages/stories.sass";
+import { getCollection } from "astro:content";
+import MainLayout from "../../../layout/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils.ts";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("stories");
+
+  const paths = pages.map((page: CollectionEntry<"stories">) => {
+    const [lang, ...slug] = page.slug.split("/");
+    return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+  });
+
+  return paths;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const page = Astro.props as CollectionEntry<"stories">;
+
+//const formattedDate = page.data.date.toLocaleString(lang);
+
+const imagePathNew = `/src/assets/images/${page.data.mainImage}`;
+
+const profileImageFullPath = `/src/assets/images-authors/${page.data.profilePicture}`;
+---
+
+<MainLayout>
+  <article class="card-container">
+    <header class="header-title">
+      <h1 set:html={page.data.title} />
+    </header>
+
+    <main class="main-container content-grid">
+      <figure class="image-container full-width">
+        <div
+          class="main-image"
+          style={{ backgroundImage: `url(${imagePathNew})` }}
+        >
+        </div>
+      </figure>
+      <div class="meta-info-stories content-width">
+        <figure class="profile-image-container">
+          <div
+            class="profile-image"
+            style={{ backgroundImage: `url(${profileImageFullPath})` }}
+          >
+          </div>
+        </figure>
+        <span class="link-author"
+          >{t("stories.author")}<a href=""> {page.data.author}</a>
+        </span>
+      </div>
+      <section class="summary-container content-width">
+        <h4 class="summary-title">{t("stories.summary")}</h4>
+        <div>
+          <div class="read-time-container">
+            <div>:-)</div>
+            <div>
+              {t("stories.readTime")}: <span>{page.data.readTime}</span>
+            </div>
+          </div>
+          <div class="summary-text">{page.data.summary}</div>
+        </div>
+      </section>
+      <section>
+        <div class="story-container" set:html={page.rendered?.html} />
+      </section>
+    </main>
+  </article>
+</MainLayout>

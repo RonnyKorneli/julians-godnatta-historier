@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["astro/client"]
+  },
+  "include": ["**/*"]
+}

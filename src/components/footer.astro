@@ -1,0 +1,34 @@
+---
+import "../styles/sections/_footer.sass";
+import LanguagePicker from "../components/languagePicker.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="footer-container">
+  <div class="footer-container-content">
+    <div class="footer-row-one">
+      <h4>{t("footer.discoveries")}</h4>
+      <ol class="fairytales-container">
+        <li><a href="">{t("footer.traditionalFairytales")} </a></li>
+        <li><a href="">{t("footer.detectiveStories")} </a></li>
+      </ol>
+    </div>
+    <div>
+      <h4>Languages</h4>
+      <div class="language-container">
+        <LanguagePicker />
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="meta-info-container">
+    <ol class="footer-list-meta-info">
+      <li>Copyright © bedtimestories</li>
+      <li><a href="">Impressum</a></li>
+      <li><a href="">Datenschutzerklärung</a></li>
+    </ol>
+  </div>
+</footer>

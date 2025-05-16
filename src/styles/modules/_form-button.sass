@@ -1,0 +1,67 @@
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+  appearance: none
+  background-color: var(--clr-primary)
+  border: 1px solid rgba(0,0,0,.25)
+  border-radius: .4em
+  color: var(--clr-background)
+  cursor: pointer
+  display: inline-block
+  font-weight: 500
+  line-height: 1.2
+  margin-right: auto
+  padding: .75em 1.25em .875em
+  text-decoration: none
+  transition: background-color .2s ease-in
+  width: auto
+
+  &:hover
+    background-color: rgba(var(--clr-primary-rgb), .9)
+
+  &.is-accent
+    background-color: var(--clr-accent)
+
+    &:hover
+      background-color: rgba(var(--clr-accent-rgb), .9)
+
+  &.is-text
+    background: transparent
+    border-color: transparent
+    color: var(--clr-primary)
+    display: inline-block
+    margin: 0 auto
+
+    &:hover
+      background: transparent
+      color: rgba(var(--clr-primary-rgb), .9)
+
+    &.is-accent
+      color: var(--clr-accent)
+
+      &:hover
+        color: rgba(var(--clr-accent-rgb), .9)
+
+  &:disabled
+    background-color: var(--clr-border)
+    border-color: rgba(0,0,0,.3)
+    color: rgba(var(--clr-foreground-rgb), .6)
+    cursor: not-allowed
+
+  &.is-outline
+    background-color: transparent
+    border: 1px solid var(--clr-primary)
+    color: var(--clr-primary)
+
+    &:hover
+      background-color: rgba(var(--clr-primary-rgb), .2)
+
+    &.is-accent
+      border-color: var(--clr-accent)
+      color: var(--clr-accent)
+
+      &:hover
+        background-color: rgba(var(--clr-accent-rgb), .2)
+

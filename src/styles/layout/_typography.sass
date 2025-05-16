@@ -1,0 +1,38 @@
+*
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+html
+  font-size: 15px
+  -webkit-text-size-adjust: none
+
+  +mq('tablet')
+    font-size: 18px
+
+  +mq('desktop')
+    font-size: 20px
+
+// +fontface('FONTNAME', '/assets/fonts/','FILENAME')
+
+
+body
+  line-height: 1.6
+
+body,
+button,
+input,
+select,
+textarea
+  font:
+    family: var(--base-font)
+  letter-spacing: -.125px
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure
+  margin: 0
