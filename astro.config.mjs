@@ -32,6 +32,5 @@ export default defineConfig({
   build: {
     sourcemap: (process.env.npm_lifecycle_event === 'dev') ? true : false,
   },
-  site: 'https://julians-godnatta-historier.netlify.app',
   integrations: [sitemap()],
 });
