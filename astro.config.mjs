@@ -8,10 +8,6 @@ import mkcert from 'vite-plugin-mkcert';
 
 export default defineConfig({
 
-  adapter: netlify({
-    imageCDN: false,
-  }),
-
   i18n: {
     locales: ["no", "en", "de"],
     defaultLocale: "no",
