@@ -10,9 +10,9 @@ tags:
   - Sterne
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
 summary: "Tief im Herzen eines Waldes lebten Bär Bjørn und Maus Milla, zwei ungleiche Freunde, die alles teilten – bis ein magisches Teleskop in ihr Leben trat. Ein Streit um Besitz, ein nächtlicher Diebstahl und ein mutiger Plan brachten sie schließlich zu einer wichtigen Erkenntnis: wahre Stärke liegt in Teamarbeit und der Freude am Teilen."
 ---

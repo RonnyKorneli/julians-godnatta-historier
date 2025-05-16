@@ -8,9 +8,9 @@ tags:
   - nature
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "julian.jpg"
 summary: "In a forest threatened by destruction, a group of animals, led by the wise owl Alura, discovers a magical elixir with the power to heal. Together, they use it to restore their home—and the world—sparking a new harmony between nature and humans."
 ---

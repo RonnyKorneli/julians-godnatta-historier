@@ -8,9 +8,9 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minutter"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
 summary: "Max drømte om å bli en kjent YouTuber, men veien dit var ikke enkel. Med støtte fra både familie og venner, lærte han at hardt arbeid, kreativitet og samarbeid kunne gjøre drømmer til virkelighet."
 ---

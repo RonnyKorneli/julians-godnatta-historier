@@ -9,9 +9,9 @@ tags:
   - succes-story
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "julian.jpg"
 summary: "Max dreamed of becoming a YouTuber and received a special gift to help him start his journey. But when things took an unexpected turn, he faced a challenge that would test his kindness and determination."
 ---

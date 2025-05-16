@@ -8,9 +8,9 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minuten"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
 summary: "Tief im Herzen eines mystischen Waldes, der einst voller Leben und Schönheit war, liegt die Legende eines magischen Elixiers, das Heilung und Hoffnung bringen kann. Als die Menschen beginnen, den Wald zu zerstören, stehen die Waldbewohner vor einer großen Herausforderung – und entdecken eine Möglichkeit, nicht nur ihren Wald, sondern die ganze Welt zu retten."
 ---

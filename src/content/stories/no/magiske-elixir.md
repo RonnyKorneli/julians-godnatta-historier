@@ -9,9 +9,9 @@ tags:
   - venner
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
 summary: "Dypt i skogen fantes et magisk eliksir som kunne helbrede alt. Da menneskene ødela hjemmet deres, ledet den kloke uglen Alura dyrene på en reise for å finne eliksiret. Deres oppdagelse ville ikke bare redde skogen, men hele verden."
 ---

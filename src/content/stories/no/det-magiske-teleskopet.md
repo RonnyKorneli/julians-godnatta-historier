@@ -8,9 +8,9 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
 summary: "Dypt i skogen bodde Bjørnen Bjørn og Musa Milla. De var bestevenner, selv om de var veldig forskjellige – Bjørn var stor og sterk, mens Milla var liten og rask. Sammen utforsket de skogen, delte eventyr og hadde det gøy. Men en dag fikk de en mystisk pakke som forandret alt."
 ---

@@ -8,9 +8,9 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "/bear-and-mouse-talking.png"
-secondImage: "/bear-and-mouse-talking.png"
-thirdImage: "/bear-and-mouse-talking.png"
+mainImage: "bear-and-mouse-talking.png"
+secondImage: "bear-and-mouse-talking.png"
+thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "julian.jpg"
 summary: "Two friends discover a magical telescope that lets them see stars even in the middle of the day. Excited by the gift, they are soon caught up in a disagreement over who it truly belongs to. When the telescope is stolen, they must put aside their differences and work together to get it back."
 ---
