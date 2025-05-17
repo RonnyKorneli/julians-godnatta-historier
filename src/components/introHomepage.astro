@@ -1,6 +1,7 @@
 ---
 import "../styles/components/introHomepage.sass";
 import HappyBird from "../assets/images/HappyBirdy.png";
+import BearImage from "../assets/images/bear-main-image.png";
 import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
 
 const lang = getLangFromUrl(Astro.url);
@@ -8,6 +9,7 @@ const t = useTranslations(lang);
 ---
 
 <section class="intro-container">
+  <img src={BearImage.src} alt="" />
   <img class="bird-image" src={HappyBird.src} alt="bird" />
   <div class="headline-box">
     <p class="sub-title">{t("home.subTitle")}</p>
