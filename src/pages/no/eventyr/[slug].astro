@@ -32,9 +32,9 @@ const page = Astro.props as CollectionEntry<"stories">;
 
 const { Content } = await page.render();
 
-const imagePathNew = `https://julians-godnatta-historier.netlify.app/.netlify/images/${page.data.mainImage}`;
+const imagePathNew = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${page.data.mainImage}`;
 
-const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images-authors/${page.data.profilePicture}`;
+const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${page.data.profilePicture}`;
 ---
 
 <MainLayout>
