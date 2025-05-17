@@ -32,9 +32,9 @@ const page = Astro.props as CollectionEntry<"stories">;
 
 const { Content } = await page.render();
 
-const imagePathNew = `/src/assets/images/${page.data.mainImage}`;
+const imagePathNew = `/images/${page.data.mainImage}`;
 
-const profileImageFullPath = `/src/assets/images-authors/${page.data.profilePicture}`;
+const profileImageFullPath = `/images-authors/${page.data.profilePicture}`;
 ---
 
 <MainLayout>

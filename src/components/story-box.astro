@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { imageUrl, title } = Astro.props as Props;
-const newImageUrl = `../src/assets/images/${imageUrl}`;
+const newImageUrl = `/images/${imageUrl}`;
 ---
 
 <div class="story-card-container">
