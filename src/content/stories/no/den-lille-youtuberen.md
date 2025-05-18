@@ -8,7 +8,7 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minutter"
-mainImage: "bear-and-mouse-talking.png"
+mainImage: "youtuber-main-image.png"
 secondImage: "bear-and-mouse-talking.png"
 thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
