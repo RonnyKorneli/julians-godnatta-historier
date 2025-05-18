@@ -7,7 +7,7 @@ tags:
   - tiere
   - abenteuer
 caption: "pudel beim haareschneiden"
-readTime: "2 minutes"
+readTime: "2 Minuten"
 mainImage: "amigo-poodle-main-image.png"
 secondImage: "bear-and-mouse-talking.png"
 thirdImage: "bear-and-mouse-talking.png"
