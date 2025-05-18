@@ -8,7 +8,7 @@ tags:
   - fun
 caption: "stuff"
 readTime: "5 minutes"
-mainImage: "telescope-main-picture.png"
+mainImage: "bear-main-image.png"
 secondImage: "bear-and-mouse-talking.png"
 thirdImage: "bear-and-mouse-talking.png"
 profilePicture: "/julian.jpg"
