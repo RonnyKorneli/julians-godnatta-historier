@@ -1,0 +1,25 @@
+---
+import "../styles/components/blogCard.sass";
+
+interface Props {
+  title: string;
+  imageUrl: string;
+  index: number;
+  paragraph: string;
+}
+
+const { imageUrl, title } = Astro.props as Props;
+const newImageUrl = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${imageUrl}`;
+---
+
+<div class="card-container">
+  <div class="background-image" style=`background-image: url(${newImageUrl})`>
+  </div>
+  <div>
+    <h2 set:html={title} />
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum asperiores
+    </p>
+    <button>READ MORE</button>
+  </div>
+</div>

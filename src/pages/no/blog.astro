@@ -2,6 +2,7 @@
 import "../../styles/pages/blog-front-page.sass";
 import MainLayout from "../../layout/base-layout.astro";
 import StoryBox from "../../components/story-box.astro";
+import BlogCard from "../../components/blogCard.astro";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
 import { getCollection } from "astro:content";
@@ -35,7 +36,7 @@ const t = useTranslations(lang);
 
           return (
             <a class="item" href={slugPath}>
-              <StoryBox
+              <BlogCard
                 title={item.data.title || "Default Title"}
                 imageUrl={item.data.mainImage || "default-image-path.png"}
                 index={index}
