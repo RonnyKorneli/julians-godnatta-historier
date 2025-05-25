@@ -1,7 +1,10 @@
+@import "../setup/_viewport-mq"
+
 .card-container
-  background: red
-  height: 450px
+  background: var(--clr-accent)
+  height: 430px
   margin-bottom: 100px
+  position: relative
 
   .background-image
     height: 50%
@@ -10,3 +13,18 @@
     background-position: center
     background-position: center
     background-size: cover
+
+  .text-container
+    padding: var(--space-s)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    button
+      position: absolute
+      bottom: var(--space-s)
+      background: var(--clr-foreground)
+
++mq('phablet')
+  .card-container
+    height: 650px
