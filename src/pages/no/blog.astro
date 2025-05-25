@@ -1,4 +1,5 @@
 ---
+import "../../styles/pages/blog-front-page.sass";
 import MainLayout from "../../layout/base-layout.astro";
 import StoryBox from "../../components/story-box.astro";
 
@@ -23,24 +24,28 @@ const t = useTranslations(lang);
 ---
 
 <MainLayout title="God Natta Historier">
-  <h1>blogggsgsgs</h1>
-  <p>paragraf</p>
-  {
-    norwegianBlog.map((item: any, index: number) => {
-      const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-      const slugPath = `/no/blog/${cleanSlug}/`;
+  <main class="content-grid">
+    <h1>blogggsgsgs</h1>
+    <p>paragraf</p>
+    <div class="wide-width blog-container">
+      {
+        norwegianBlog.map((item: any, index: number) => {
+          const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
+          const slugPath = `/no/blog/${cleanSlug}/`;
 
-      return (
-        <a class="item" href={slugPath}>
-          <StoryBox
-            title={item.data.title || "Default Title"}
-            imageUrl={item.data.mainImage || "default-image-path.png"}
-            index={index}
-          />
-        </a>
-      );
-    })
-  }
+          return (
+            <a class="item" href={slugPath}>
+              <StoryBox
+                title={item.data.title || "Default Title"}
+                imageUrl={item.data.mainImage || "default-image-path.png"}
+                index={index}
+              />
+            </a>
+          );
+        })
+      }
+    </div>
+  </main>
 </MainLayout>
 
 <script></script>
