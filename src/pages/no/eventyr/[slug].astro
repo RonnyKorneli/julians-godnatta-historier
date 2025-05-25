@@ -30,8 +30,6 @@ const t = useTranslations(lang);
 const page = Astro.props as CollectionEntry<"stories">;
 //const formattedDate = page.data.date.toLocaleString(lang);
 
-const { Content } = await page.render();
-
 const imagePathNew = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${page.data.mainImage}`;
 
 const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${page.data.profilePicture}`;

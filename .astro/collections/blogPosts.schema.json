@@ -1,0 +1,60 @@
+{
+  "$ref": "#/definitions/blogPosts",
+  "definitions": {
+    "blogPosts": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "caption": {
+          "type": "string"
+        },
+        "readTime": {
+          "type": "string"
+        },
+        "mainImage": {
+          "type": "string"
+        },
+        "secondImage": {
+          "type": "string"
+        },
+        "thirdImage": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "lang",
+        "author",
+        "tags",
+        "readTime",
+        "mainImage",
+        "summary"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
