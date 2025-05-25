@@ -55,7 +55,7 @@ const traditionalStoriesCollection = defineCollection({
   })
 })
 
-const blogPosts = defineCollection({
+const blogPostsCollection = defineCollection({
   slug: ({ id, defaultSlug, data }) => {
     // Generate the slug based on the file name
     return defaultSlug.split('/').pop();
@@ -84,7 +84,7 @@ const blogPosts = defineCollection({
 export const collections = {
   stories:storiesCollection,
   traditionalStories:traditionalStoriesCollection,
-  blogPosts:blogPosts,
+  blog:blogPostsCollection,
 }
 
 

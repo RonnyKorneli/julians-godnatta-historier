@@ -1,21 +1,20 @@
 ---
 import MainLayout from "../../layout/base-layout.astro";
+import StoryBox from "../../components/story-box.astro";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
 import { getCollection } from "astro:content";
 
-const storiesCollection = await getCollection("stories");
+const blogCollection = await getCollection("blog");
 const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
 
-console.log(currentLang, "current lang");
-
-const norwegianStories = storiesCollection.filter(
-  (item: { data: { lang: string } }) => item.data.lang === "no"
+const norwegianBlog = blogCollection.filter(
+  (item: { id: string; data: { lang: string } }) => item.data.lang === "no"
 );
 
-const cleanUpSlug = norwegianStories.map((item) => {
+const cleanUpSlug = norwegianBlog.map((item: { id: string }) => {
   // Remove the "no/" part from the slug
-  const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
+  const cleanSlug = item.id.split("/").slice(1).join("/"); // Split by '/' and remove the first part
   return cleanSlug;
 });
 
@@ -25,4 +24,23 @@ const t = useTranslations(lang);
 
 <MainLayout title="God Natta Historier">
   <h1>blogggsgsgs</h1>
+  <p>paragraf</p>
+  {
+    norwegianBlog.map((item: any, index: number) => {
+      const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
+      const slugPath = `/no/blog/${cleanSlug}/`;
+
+      return (
+        <a class="item" href={slugPath}>
+          <StoryBox
+            title={item.data.title || "Default Title"}
+            imageUrl={item.data.mainImage || "default-image-path.png"}
+            index={index}
+          />
+        </a>
+      );
+    })
+  }
 </MainLayout>
+
+<script></script>

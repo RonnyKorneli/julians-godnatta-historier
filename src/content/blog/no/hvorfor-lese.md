@@ -1,6 +1,6 @@
 ---
 title: "Hvorfor det er viktig å lese for barna ved leggetid?"
-lang: "de"
+lang: "no"
 author: "Julian"
 tags:
   - hund

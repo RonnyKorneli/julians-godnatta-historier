@@ -53,7 +53,7 @@ export const ui = {
     'nav.traditionalStories':'Tradisjonelle eventyr',
     'nav.whoIsJulian':'Hvem er Julian?',
     'nav.blog':'Blog',
-    'nav.button':'Eventyr Sök',
+    'nav.button':'Eventyr Søk',
     'home.title':'Hver uke nye historier',
     'home.subTitle':'Gratis for deg og dine barn',
     'home.callToActionButton':'Få Julians godnatthistorier rett i innboksen din',
