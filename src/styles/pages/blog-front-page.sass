@@ -1,12 +1,22 @@
+@import "../setup/_viewport-mq"
+
+.title-frontpage
+
+.main-container
+  background: var(--clr-marine)
 .blog-container
   padding-top: var(--gap)
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
   gap: calc(var(--space-m))
+  margin-bottom: var(--space-m)
 
   .item
-    a
-      all: unset
-      display: inline
-      text-decoration: none
-      cursor: pointer
+  a
+    all: unset
+    display: inline
+    text-decoration: none
+    cursor: pointer
+
++mq('tablet')
+  .stories-container

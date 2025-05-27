@@ -31,8 +31,6 @@ const t = useTranslations(lang);
         norwegianStories.map((item: any, index: number) => {
           const slugPath = `${item.slug}/`;
 
-          console.log(slugPath, "pathahahah");
-
           return (
             <a class="item" href={slugPath}>
               <StoryBox

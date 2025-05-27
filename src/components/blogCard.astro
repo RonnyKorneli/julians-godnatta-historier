@@ -1,36 +1,38 @@
 ---
 import "../styles/components/blogCard.sass";
-
 interface Props {
   title: string;
   imageUrl: string;
+  authorImage: string;
   index: number;
-  paragraph: string;
 }
 
-const { imageUrl, title } = Astro.props as Props;
+const { imageUrl, title, authorImage } = Astro.props as Props;
 const newImageUrl = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${imageUrl}`;
-const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${page.data.profilePicture}`;
+const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${authorImage}`;
 ---
 
-<div class="card-container">
-  <div class="background-image" style=`background-image: url(${newImageUrl})`>
+<div class="blog-card-container">
+  <div
+    class="blog-card-backround-image"
+    style=`background-image: url(${newImageUrl})`
+  >
   </div>
-  <div class="text-container">
-    <h2 set:html={title} />
+  <section class="bottom-half-of-card">
+    <h2 class="blog-title" set:html={title} />
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum asperiores
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam fugit
     </p>
-    <div class="author-container">
-      <figure class="profile-image-container">
-        <div
-          class="profile-image"
-          style={{ backgroundImage: `url(${profileImageFullPath})` }}
-        >
-        </div>
-      </figure>
-      <span class="link-author"><a href="">julian</a></span>
+    <div class="author-section">
+      <div
+        class="author-image"
+        style={{ backgroundImage: `url(${profileImageFullPath})` }}
+      >
+      </div>
+      <div class="name-and-date-container">
+        <div class="author">Julian Korneli</div>
+        <div>Today</div>
+      </div>
     </div>
-    <button>READ MORE</button>
-  </div>
+  </section>
 </div>

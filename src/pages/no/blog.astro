@@ -1,22 +1,30 @@
 ---
 import "../../styles/pages/blog-front-page.sass";
 import MainLayout from "../../layout/base-layout.astro";
-import StoryBox from "../../components/story-box.astro";
 import BlogCard from "../../components/blogCard.astro";
-
-import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
 import { getCollection } from "astro:content";
+// import JsonArray from "../content/stories.json";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
 
-const blogCollection = await getCollection("blog");
+const storiesCollection = await getCollection("blog");
 const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
 
-const norwegianBlog = blogCollection.filter(
-  (item: { id: string; data: { lang: string } }) => item.data.lang === "no"
+console.log(currentLang, "current lang");
+
+// Map languages to their corresponding path segments
+const langToPathMap = {
+  de: "geschichten",
+  en: "stories",
+  no: "eventyr"
+};
+const pathSegment = langToPathMap[currentLang] || "stories";
+const norwegianStories = storiesCollection.filter(
+  (item: { data: { lang: string } }) => item.data.lang === "no"
 );
 
-const cleanUpSlug = norwegianBlog.map((item: { id: string }) => {
+const cleanUpSlug = norwegianStories.map((item) => {
   // Remove the "no/" part from the slug
-  const cleanSlug = item.id.split("/").slice(1).join("/"); // Split by '/' and remove the first part
+  const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
   return cleanSlug;
 });
 
@@ -25,12 +33,10 @@ const t = useTranslations(lang);
 ---
 
 <MainLayout title="God Natta Historier">
-  <main class="content-grid">
-    <h1>blogggsgsgs</h1>
-    <p>paragraf</p>
-    <div class="wide-width blog-container">
+  <main class="main-container content-grid">
+    <div class="blog-container wide-width">
       {
-        norwegianBlog.map((item: any, index: number) => {
+        norwegianStories.map((item: any, index: number) => {
           const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
           const slugPath = `/no/blog/${cleanSlug}/`;
 
@@ -40,6 +46,7 @@ const t = useTranslations(lang);
                 title={item.data.title || "Default Title"}
                 imageUrl={item.data.mainImage || "default-image-path.png"}
                 index={index}
+                authorImage={item.data.profilePicture}
               />
             </a>
           );
@@ -48,5 +55,3 @@ const t = useTranslations(lang);
     </div>
   </main>
 </MainLayout>
-
-<script></script>
