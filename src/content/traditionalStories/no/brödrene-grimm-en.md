@@ -1,6 +1,6 @@
 ---
-title: "Bruder G"
-lang: "de"
+title: "Bruder Grimm norsk 2"
+lang: "no"
 author: "Grimm"
 tags:
   - yotuber

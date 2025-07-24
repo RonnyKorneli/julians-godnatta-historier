@@ -17,11 +17,11 @@ const langToPathMap = {
   no: "eventyr"
 };
 const pathSegment = langToPathMap[currentLang] || "stories";
-const norwegianStories = storiesCollection.filter(
-  (item: { data: { lang: string } }) => item.data.lang === "no"
+const germanStories = storiesCollection.filter(
+  (item: { data: { lang: string } }) => item.data.lang === "de"
 );
 
-const cleanUpSlug = norwegianStories.map((item) => {
+const cleanUpSlug = germanStories.map((item) => {
   // Remove the "no/" part from the slug
   const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
   return cleanSlug;
@@ -35,9 +35,9 @@ const t = useTranslations(lang);
   <main class="main-container content-grid">
     <div class="blog-container wide-width">
       {
-        norwegianStories.map((item: any, index: number) => {
+        germanStories.map((item: any, index: number) => {
           const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-          const slugPath = `/no/blog/${cleanSlug}/`;
+          const slugPath = `/en/blog/${cleanSlug}/`;
 
           return (
             <a class="item" href={slugPath}>

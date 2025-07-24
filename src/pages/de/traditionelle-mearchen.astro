@@ -6,12 +6,10 @@ import IntroTraditionalStories from "../../components/introTraditionalStories.as
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
 
 const traditionalStoriesCollection = await getCollection("traditionalStories");
-const norwegianTraditionalStories = traditionalStoriesCollection.filter(
-  (item: { data: { lang: string } }) => item.data.lang === "no"
+const germanTraditionalStories = traditionalStoriesCollection.filter(
+  (item: { data: { lang: string } }) => item.data.lang === "de"
 );
 const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
-
-console.log(traditionalStoriesCollection, "TRADstories");
 ---
 
 <MainLayout>
@@ -19,9 +17,9 @@ console.log(traditionalStoriesCollection, "TRADstories");
     <IntroTraditionalStories />
     <div>
       {
-        norwegianTraditionalStories.map((item: any, index: number) => {
+        germanTraditionalStories.map((item: any, index: number) => {
           const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-          const slugPath = `/no/tradisjonelle-eventyr/${cleanSlug}/`;
+          const slugPath = `/de/traditionelle-mearchen/${cleanSlug}/`;
 
           return (
             <a class="item" href="">

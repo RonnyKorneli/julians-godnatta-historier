@@ -1,11 +1,12 @@
 ---
 import "../../styles/pages/blog-front-page.sass";
-import MainLayout from "../../layout/base-layout.astro";
-import BlogCard from "../../components/blogCard.astro";
+import MainLayout from "../../../layout/base-layout.astro";
+import BlogCard from "../../../components/blogCard.astro";
+import StoryCard from "../../../components/story-box.astro";
 import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils.ts";
 
-const storiesCollection = await getCollection("blog");
+const storiesCollection = await getCollection("traditionalStories");
 const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
 
 console.log(currentLang, "current lang");
@@ -17,11 +18,11 @@ const langToPathMap = {
   no: "eventyr"
 };
 const pathSegment = langToPathMap[currentLang] || "stories";
-const norwegianStories = storiesCollection.filter(
+const norwegianTraditionellStories = storiesCollection.filter(
   (item: { data: { lang: string } }) => item.data.lang === "no"
 );
 
-const cleanUpSlug = norwegianStories.map((item) => {
+const cleanUpSlug = norwegianTraditionellStories.map((item) => {
   // Remove the "no/" part from the slug
   const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
   return cleanSlug;
@@ -35,17 +36,16 @@ const t = useTranslations(lang);
   <main class="main-container content-grid">
     <div class="blog-container wide-width">
       {
-        norwegianStories.map((item: any, index: number) => {
+        norwegianTraditionellStories.map((item: any, index: number) => {
           const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-          const slugPath = `/no/blog/${cleanSlug}/`;
+          const slugPath = `/no/tradisjonelle-eventyr/${cleanSlug}/`;
 
           return (
             <a class="item" href={slugPath}>
-              <BlogCard
+              <StoryCard
                 title={item.data.title || "Default Title"}
                 imageUrl={item.data.mainImage || "default-image-path.png"}
                 index={index}
-                authorImage={item.data.profilePicture}
               />
             </a>
           );

@@ -1,7 +1,3 @@
-import NorwayFlag from "../assets/icons/norway-icon.svg"
-
-console.log(NorwayFlag);
-
 
 export const languages = {
   en: 'EN',

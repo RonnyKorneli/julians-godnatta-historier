@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import MainLayout from "../../../layout/base-layout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("blog");
+
+  const paths = pages.map((page: CollectionEntry<"blog">) => {
+    const slugParts = page.slug.split("/");
+
+    // If the path includes language and subdirectory, separate them accordingly
+    const lang = slugParts[0]; // Assuming the first part is always the lang
+    const slug = slugParts.slice(1).join("/"); // Combine the rest into the slug
+
+    // Return the correct params object
+    return {
+      params: { lang, slug },
+      props: page
+    };
+  });
+
+  return paths;
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const page = Astro.props as CollectionEntry<"blog">;
+//const formattedDate = page.data.date.toLocaleString(lang);
+console.log(page, "this is page");
+
+const imagePathNew = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${page.data.mainImage}`;
+
+const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${page.data.profilePicture}`;
+---
+
+<MainLayout>
+  <h1>{page.data.title}</h1>
+</MainLayout>

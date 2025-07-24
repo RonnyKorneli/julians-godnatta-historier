@@ -1,47 +1,8 @@
 ---
-import "../styles/sections/_frontpage.sass";
-import MainLayout from "../layout/base-layout.astro";
-import StoryBox from "../components/story-box.astro";
-import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+// src/pages/index.astro
+export const prerender = true;
 
-const storiesCollection = await getCollection("stories");
-const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "no";
-
-// Map languages to their corresponding path segments
-const langToPathMap = {
-  de: "geschichten",
-  en: "stories",
-  no: "eventyr"
-};
-const pathSegment = langToPathMap[currentLang] || "stories";
-const norwegianStories = storiesCollection.filter(
-  (item: { data: { lang: string } }) => item.data.lang === "no"
-);
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+export async function get() {
+  return Astro.redirect("/no/", 302); // or 301 if permanent
+}
 ---
-
-<MainLayout title="God Natta Historier">
-  <main class="main-container content-grid">
-    <h1 class="title-frontpage wide-width">{t("home.title")}</h1>
-    <div class="stories-container wide-width">
-      {
-        norwegianStories.map((item: any, index: number) => {
-          const slugPath = `${item.slug}/`;
-
-          return (
-            <a class="item" href={slugPath}>
-              <StoryBox
-                title={item.data.title || "Default Title"}
-                imageUrl={item.data.mainImage || "default-image-path.png"}
-                index={index}
-              />
-            </a>
-          );
-        })
-      }
-    </div>
-  </main>
-</MainLayout>
