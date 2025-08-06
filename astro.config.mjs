@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import mkcert from 'vite-plugin-mkcert';
 
 export default defineConfig({
-  output: 'server', // ✅ needed for middleware
+  output: 'static', // ✅ needed for middleware
 
   i18n: {
     locales: ["no", "en", "de"],
