@@ -1,4 +1,4 @@
-@import "../setup/_viewport-mq"
+@use "../setup/_viewport-mq"
 
 h4
   color: var(--clr-background)
@@ -58,5 +58,5 @@ h4
 
 .language-container
   display: flex
-  +mq('tablet')
+  +viewport-mq.mq('tablet')
     display: flex

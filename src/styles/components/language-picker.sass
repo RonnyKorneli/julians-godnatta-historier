@@ -1,4 +1,4 @@
-@import "../setup/_viewport-mq"
+@use "../setup/_viewport-mq"
 
 .language-container
   display: flex
@@ -10,6 +10,6 @@
     color: var(--clr-background)
     text-decoration: none
 
-+mq('tablet')
++viewport-mq.mq('tablet')
   .language-container
     display: flex

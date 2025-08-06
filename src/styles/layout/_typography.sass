@@ -1,3 +1,5 @@
+@use '../setup/viewport-mq'
+@use '../setup/mixins.sass'
 *
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -6,14 +8,13 @@ html
   font-size: 15px
   -webkit-text-size-adjust: none
 
-  +mq('tablet')
+  +viewport-mq.mq('tablet')
     font-size: 18px
 
-  +mq('desktop')
+  +viewport-mq.mq('desktop')
     font-size: 20px
 
 // +fontface('FONTNAME', '/assets/fonts/','FILENAME')
-
 
 body
   line-height: 1.6

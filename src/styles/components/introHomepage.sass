@@ -1,4 +1,4 @@
-@import "../setup/_viewport-mq"
+@use "../setup/_viewport-mq"
 
 .intro-container
   width: 100%
@@ -44,12 +44,12 @@
    width: 200px
    height: 200px*/
 
-  +mq('phablet')
+  +viewport-mq.mq('phablet')
     .bird-image
       width: 200px
       height: 200px
 
-  +mq('desktop')
+  +viewport-mq.mq('desktop')
     .bird-image
       width: 330px
       height: 330px

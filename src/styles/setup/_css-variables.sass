@@ -1,3 +1,5 @@
+@use './viewport-mq'
+@use './mixins.sass'
 :root
   --viewport-phone: #{get-width('phone')}
   --viewport-phablet: #{get-width('phablet')}
@@ -26,7 +28,7 @@
   --global-radius: .375rem
   --global-radius-max: 1rem
 
-  --mobile-breakpoint: #{$mobile-breakpoint}
+  --mobile-breakpoint: #{viewport-mq.$mobile-breakpoint}
 
   --content-max-width: var(--viewport-tablet)
   --wide-max-width: var(--viewport-desktop)
@@ -54,19 +56,19 @@
   --clr-black: #000
 
   // define-CSS-color-variable: creates two css-variables for the hex and rgb value (e.g. --clr-NAME-rgb: 0, 0, 0)
-  +define-CSS-color-variable('foreground', #1e2332)
-  +define-CSS-color-variable('background', #fcfcf7)
-  +define-CSS-color-variable('border', #858887)
-  +define-CSS-color-variable('primary', #008396)
-  +define-CSS-color-variable('accent', #f7ad79)
-  +define-CSS-color-variable('lightblue', #c5dfee)
-  +define-CSS-color-variable('marine', #00385c)
+  +mixins.define-CSS-color-variable('foreground', #1e2332)
+  +mixins.define-CSS-color-variable('background', #fcfcf7)
+  +mixins.define-CSS-color-variable('border', #858887)
+  +mixins.define-CSS-color-variable('primary', #008396)
+  +mixins.define-CSS-color-variable('accent', #f7ad79)
+  +mixins.define-CSS-color-variable('lightblue', #c5dfee)
+  +mixins.define-CSS-color-variable('marine', #00385c)
   //+define-CSS-color-variable('lightgrey', #f5f7f4)
 
    // define-CSS-color-variable: creates two css-variables for the hex and rgb value (e.g. --clr-NAME-rgb: 0, 0, 0)
 
-  +define-CSS-color-variable('sand', #dfe3e4)
-  +define-CSS-color-variable('other', #352737)
+  +mixins.define-CSS-color-variable('sand', #dfe3e4)
+  +mixins.define-CSS-color-variable('other', #352737)
 
   // --clr-background: var(--clr-lightgrey)
 
