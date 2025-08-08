@@ -5,6 +5,7 @@ import BlogCard from "../../../components/blogCard.astro";
 import StoryCard from "../../../components/story-box.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils.ts";
+import type { CollectionEntry } from "astro:content";
 
 const storiesCollection = await getCollection("traditionalStories");
 const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
@@ -27,6 +28,17 @@ const cleanUpSlug = norwegianTraditionellStories.map((item) => {
   const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
   return cleanSlug;
 });
+
+export async function getStaticPaths() {
+  const pages = await getCollection("traditionalStories");
+
+  const paths = pages.map((page: CollectionEntry<"traditionalStories">) => {
+    const [lang, ...slug] = page.slug.split("/");
+    return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+  });
+
+  return paths;
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
