@@ -14,13 +14,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.5.5",
+    "@astrojs/netlify": "^6.5.6",
     "astro": "^5.1.4"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "autoprefixer": "^10.4.16",
-    "sass": "^1.69.5",
+    "sass": "^1.90.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-mkcert": "^1.17.5"
   },
