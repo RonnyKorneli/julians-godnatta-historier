@@ -1,11 +1,11 @@
 @use './viewport-mq'
 @use './mixins.sass'
 :root
-  --viewport-phone: #{get-width('phone')}
-  --viewport-phablet: #{get-width('phablet')}
-  --viewport-tablet: #{get-width('tablet')}
-  --viewport-desktop: #{get-width('desktop')}
-  --viewport-desktop-wide: #{get-width('desktop-wide')}
+  --viewport-phone: #{viewport-mq.get-width('phone')}
+  --viewport-phablet: #{viewport-mq.get-width('phablet')}
+  --viewport-tablet: #{viewport-mq.get-width('tablet')}
+  --viewport-desktop: #{viewport-mq.get-width('desktop')}
+  --viewport-desktop-wide: #{viewport-mq.get-width('desktop-wide')}
 
   --space-xs: clamp(0.625rem, 0.5938rem + 0.1563vw, 0.75rem)
   --space-s: clamp(0.9375rem, 0.8906rem + 0.2344vw, 1.125rem)
