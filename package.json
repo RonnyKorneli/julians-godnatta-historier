@@ -2,9 +2,9 @@
   "type": "module",
   "name": "god-natta-historier",
   "version": "0.1.0",
-  "description": "project starter kit for developing an astro based website",
-  "repository": "https://db@git.zweibrand.de/bm-projects/zweibrand-astro-starter.git",
-  "author": "David Block <block@studio-zweibrand.de>",
+  "description": "",
+  "repository": "",
+  "author": "Ronny Korneli",
   "license": "GPLv3",
   "private": true,
   "scripts": {
