@@ -2,7 +2,7 @@ $breakpoints: ('phone': 375px, 'phone-wide': 480px, 'phablet': 560px, 'tablet': 
 
 // breakpoint as width
 @function get-width($key: 'desktop')
-  @return map.get($breakpoints, $key)
+  @return map-get($breakpoints, $key)
 
 // define breakpoint for mobile devices
 $mobile-breakpoint: get-width('tablet-wide')
