@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mkcert from 'vite-plugin-mkcert';
 
+import react from '@astrojs/react';
+
 export default defineConfig({
   output: 'static', // ✅ needed for middleware
 
@@ -26,5 +28,5 @@ export default defineConfig({
   build: {
     sourcemap: process.env.npm_lifecycle_event === 'dev',
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), react()],
 });

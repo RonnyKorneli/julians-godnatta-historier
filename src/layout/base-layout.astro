@@ -5,7 +5,8 @@ import { getLangFromUrl } from "../i18n/utils";
 import MainHead from "../components/main-head.astro";
 import LanguagePicker from "../components/languagePicker.astro";
 import Footer from "../components/footer.astro";
-import Navbar from "../components/navbar.astro";
+import Navbar from "../components/navbar.jsx";
+import ResponsiveNavbar from "../components/responsiveNavBar.jsx";
 
 const {
   title = "God Natta historier",
@@ -23,7 +24,7 @@ console.log(lang, "this is lang inside main layout");
 
   <body class:list={[{ "is-light": isLight }]}>
     <div class="page">
-      <Navbar />
+      <ResponsiveNavbar client:load lang={lang} />
       <main class="main-content">
         <slot>Content goes here</slot>
       </main>
