@@ -14,7 +14,7 @@ export default function Navbar({ lang }) {
   const urlSlug = langToPathMap[lang];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar content-grid">
       <div class="nav-container wide-width">
         <div class="navbar-left">
           <ol>
