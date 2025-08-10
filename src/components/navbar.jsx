@@ -18,7 +18,7 @@ export default function Navbar({ lang }) {
       <div class="nav-container wide-width">
         <div class="navbar-left">
           <ol>
-            <li>{t("nav.pageName")}</li>
+            <li><a href="/">{t("nav.pageName")}</a></li>
           </ol>
         </div>
         <div class="navbar-right">

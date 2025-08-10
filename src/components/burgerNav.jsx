@@ -33,12 +33,16 @@ export default function Navbar({ lang }) {
       </button>
 
       {/* Menu */}
+      <div>
       <ul className={`menu-list ${menuOpen ? "open" : ""}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href={`/${lang}/${urlSlug}`}>{t("stories")}</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/">{t("nav.pageName")}</a></li>
+        <li><a href={`/${lang}/${urlSlug}/`}>{t("nav.traditionalStories")}</a></li>
+        <li><a href="/about">{t("nav.whoIsJulian")}</a></li>
+        <li><a href="/contact">{t("nav.blog")}</a></li>
       </ul>
+      </div>
+
+
     </nav>
   );
 }
