@@ -43,6 +43,8 @@ const t = useTranslations(lang);
             <a class="item" href={slugPath}>
               <BlogCard
                 title={item.data.title || "Default Title"}
+                tagline={item.data.tagline}
+                author={item.data.author}
                 imageUrl={item.data.mainImage || "default-image-path.png"}
                 index={index}
                 authorImage={item.data.profilePicture}

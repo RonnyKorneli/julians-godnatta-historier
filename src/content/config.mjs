@@ -77,7 +77,7 @@ const blogPostsCollection = defineCollection({
       message: "Image must be a valid file path ending in .jpg, .jpeg, .png, .webp, or .svg",
     }).optional(),
     profilePicture:z.string().optional(),
-    summary:z.string()
+    tagline:z.string()
   })
 })
 

@@ -1,68 +1,81 @@
 ---
-import "../../../styles/pages/blog-front-page.sass";
-import MainLayout from "../../../layout/base-layout.astro";
-import BlogCard from "../../../components/blogCard.astro";
-import StoryCard from "../../../components/story-box.astro";
+import "../../../styles/pages/stories.sass";
 import { getCollection } from "astro:content";
+import MainLayout from "../../../layout/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils.ts";
 import type { CollectionEntry } from "astro:content";
-
-const storiesCollection = await getCollection("traditionalStories");
-const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
-
-console.log(currentLang, "current lang");
-
-// Map languages to their corresponding path segments
-const langToPathMap = {
-  de: "geschichten",
-  en: "stories",
-  no: "eventyr"
-};
-const pathSegment = langToPathMap[currentLang] || "stories";
-const norwegianTraditionellStories = storiesCollection.filter(
-  (item: { data: { lang: string } }) => item.data.lang === "no"
-);
-
-const cleanUpSlug = norwegianTraditionellStories.map((item) => {
-  // Remove the "no/" part from the slug
-  const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-  return cleanSlug;
-});
 
 export async function getStaticPaths() {
   const pages = await getCollection("traditionalStories");
 
   const paths = pages.map((page: CollectionEntry<"traditionalStories">) => {
-    const [lang, ...slug] = page.slug.split("/");
-    return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+    const slugParts = page.slug.split("/");
+
+    // If the path includes language and subdirectory, separate them accordingly
+    const lang = slugParts[0]; // Assuming the first part is always the lang
+    const slug = slugParts.slice(1).join("/"); // Combine the rest into the slug
+
+    // Return the correct params object
+    return {
+      params: { lang, slug },
+      props: page
+    };
   });
 
   return paths;
 }
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const page = Astro.props as CollectionEntry<"traditionalStories">;
+//const formattedDate = page.data.date.toLocaleString(lang);
+
+const imagePathNew = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images/${page.data.mainImage}`;
+
+const profileImageFullPath = `https://julians-godnatta-historier.netlify.app/.netlify/images?url=/images-authors/${page.data.profilePicture}`;
 ---
 
-<MainLayout title="God Natta Historier">
-  <main class="main-container content-grid">
-    <div class="blog-container wide-width">
-      {
-        norwegianTraditionellStories.map((item: any, index: number) => {
-          const cleanSlug = item.slug.split("/").slice(1).join("/"); // Split by '/' and remove the first part
-          const slugPath = `/no/tradisjonelle-eventyr/${cleanSlug}/`;
+<MainLayout>
+  <article class="card-container">
+    <header class="header-title">
+      <h1 set:html={page.data.title} />
+    </header>
 
-          return (
-            <a class="item" href={slugPath}>
-              <StoryCard
-                title={item.data.title || "Default Title"}
-                imageUrl={item.data.mainImage || "default-image-path.png"}
-                index={index}
-              />
-            </a>
-          );
-        })
-      }
-    </div>
-  </main>
+    <main class="main-container content-grid">
+      <figure class="image-container full-width">
+        <div
+          class="main-image"
+          style={{ backgroundImage: `url(${imagePathNew})` }}
+        >
+        </div>
+      </figure>
+      <div class="meta-info-stories content-width">
+        <figure class="profile-image-container">
+          <div
+            class="profile-image"
+            style={{ backgroundImage: `url(${profileImageFullPath})` }}
+          >
+          </div>
+        </figure>
+        <span class="link-author"
+          >{t("stories.author")} <a href="">{page.data.author}</a>
+        </span>
+      </div>
+      <section class="summary-container content-width">
+        <h4 class="summary-title">{t("stories.summary")}:</h4>
+        <div>
+          <div class="read-time-container">
+            <div>🙂</div>
+            <div>
+              {t("stories.readTime")}: <span>{page.data.readTime}</span>
+            </div>
+          </div>
+          <div class="summary-text">{page.data.summary}</div>
+        </div>
+      </section>
+      <section>
+        <div class="story-container" set:html={page.rendered?.html} />
+      </section>
+    </main>
+  </article>
 </MainLayout>

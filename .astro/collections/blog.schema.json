@@ -37,7 +37,7 @@
         "profilePicture": {
           "type": "string"
         },
-        "summary": {
+        "tagline": {
           "type": "string"
         },
         "$schema": {
@@ -51,7 +51,7 @@
         "tags",
         "readTime",
         "mainImage",
-        "summary"
+        "tagline"
       ],
       "additionalProperties": false
     }
