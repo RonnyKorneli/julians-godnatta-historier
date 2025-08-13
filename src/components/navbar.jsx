@@ -6,12 +6,18 @@ export default function Navbar({ lang }) {
 
 
   const langToPathMap = {
-    de: "traditionelle-märchen",
+    de: "traditionelle-mearchen",
     en: "traditionalStories",
     no: "tradisjonelle-eventyr"
   };
+  const urlSlugTraditionelleStories = langToPathMap[lang];
 
-  const urlSlug = langToPathMap[lang];
+  const urlSlugWhoIsJulianMap = {
+    de: "wer-ist-julian",
+    en: "who-is-julian",
+    no: "hvem-er-julian"
+  }
+  const urlSlugWhoIsJulian = urlSlugWhoIsJulianMap[lang]
 
   return (
     <nav className="navbar content-grid">
@@ -24,9 +30,9 @@ export default function Navbar({ lang }) {
         <div class="navbar-right">
           <ol class="navbar-right-container">
             <li>
-              <a href={`/${lang}/${urlSlug}/`}>{t("nav.traditionalStories")}</a>
+              <a href={`/${lang}/${urlSlugTraditionelleStories}/`}>{t("nav.traditionalStories")}</a>
             </li>
-            <li>{t("nav.whoIsJulian")}</li>
+            <li><a href={`/${lang}/${urlSlugWhoIsJulian}/`}>{t("nav.whoIsJulian")}</a></li>
             <li>
               <a href={`/${lang}/blog/`}>{t("nav.blog")}</a>
             </li>

@@ -22,7 +22,7 @@ const currentLang = getLangFromUrl(new URL(Astro.url.href)) || "en";
           const slugPath = `/de/traditionelle-mearchen/${cleanSlug}/`;
 
           return (
-            <a class="item" href="">
+            <a class="item" href={slugPath}>
               <StoryBox
                 title={item.data.title || "Default Title"}
                 imageUrl={item.data.mainImage || "default-image-path.png"}
